@@ -112,6 +112,7 @@ export function useFormMenuService(){
                 error.value.categorie = result.data.warning.categorie ? result.data.warning.categorie : null;
             }else{
                 resetError()
+                resetForm()
                 callback()
             }
 
@@ -139,6 +140,15 @@ export function useFormMenuService(){
         formMenu.image = data?.image ?? null;
         formMenu.price = data?.price ?? null;
         formMenu.categorie = data?.category?.id ?? null;
+    }
+
+    const resetForm = function(){
+        formMenu.id = null;
+        formMenu.name = null;
+        formMenu.description =  null;
+        formMenu.image = null;
+        formMenu.price = null;
+        formMenu.categorie = null;
     }
 
     const handleUploadedImage = function(event) {

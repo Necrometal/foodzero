@@ -105,6 +105,7 @@ export function useFormCategorieService(){
                 error.value.name = result.data.warning.name ? result.data.warning.name : null;
             }else{
                 resetError()
+                resetForm()
                 callback()
             }
 
@@ -130,6 +131,13 @@ export function useFormCategorieService(){
         formCategorie.name = data?.name ?? null;
         formCategorie.description = data?.description ?? null;
         formCategorie.image = data?.image ?? null;
+    }
+
+    const resetForm = function(){
+        formCategorie.id = null;
+        formCategorie.name =  null;
+        formCategorie.description =  null;
+        formCategorie.image = null;
     }
 
     const handleUploadedImage = function(event) {
