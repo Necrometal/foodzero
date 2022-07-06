@@ -56,6 +56,10 @@
                         <div class="col md-6">{{ $reservation->person }}</div>
                     </div>
                 </div>
+
+                <div class="card-footer">
+                    Cordialement, Food Zero
+                </div>
             </div>
         </div>
     </body>
